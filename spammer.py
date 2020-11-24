@@ -51,7 +51,7 @@ def main():
         for request in r:
             try:
                 resp = c.get_response(request)
-                if resp.status is not 200:
+                if resp.status != 200:
                     raise ValueError('invalid response from server')
                 text = resp.read().decode('utf-8')
                 if pattern.search(text):
